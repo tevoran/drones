@@ -20,6 +20,7 @@ set(CMAKE_C_FLAGS "")
 
 #creating drones game
 file(GLOB_RECURSE drones_SRC src/*.c)
+include_directories("src/")
 add_executable(drones ${drones_SRC})
 
 target_link_libraries(drones PRIVATE kosmonaut)
@@ -29,5 +30,3 @@ target_link_libraries(drones LINK_PRIVATE "${NNG}")
 target_link_libraries(drones LINK_PRIVATE "${PTHREAD}")
 target_link_libraries(drones LINK_PRIVATE "${GLEW}")
 target_link_libraries(drones LINK_PRIVATE "${GL}")
-
-file(COPY build/drones DESTINATION ../)
